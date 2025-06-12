@@ -1,0 +1,38 @@
+{
+  "canisters": {
+    "ROK_backend": {
+      "candid": "src/ROK_backend/ROK_backend.did",
+      "package": "ROK_backend",
+      "type": "rust"
+    },
+    "ROK_frontend": {
+      "dependencies": [
+        "ROK_backend"
+      ],
+      "source": [
+        "src/ROK_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "ROK_frontend"
+    },
+    "internet_identity": {
+      "candid": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity.did",
+      "frontend": {},
+      "remote": {
+        "id": {
+          "ic": "rdmx6-jaaaa-aaaaa-aaadq-cai"
+        }
+      },
+      "type": "custom",
+      "wasm": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity_dev.wasm.gz"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
